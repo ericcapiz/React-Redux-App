@@ -10,7 +10,8 @@ const MainDiv = styled.div `
 
 display: flex;
 flex-flow:row;
-justify-content: space-evenly;
+justify-content: center;
+align-items:center;
 padding: 0;
 width: 100%;
 height: 100vh;
@@ -60,8 +61,9 @@ const App=(props)=> {
       <header className="App-header">
        <h1>Nasa Images</h1>
        <Button onClick={() => window.location.reload(false)}>Click to get a random picture</Button>
-  <h3>{props.nasaData.title}</h3>
-       <img src={props.nasaData.img}></img>
+        <h3>{props.nasaData.title}</h3>
+        <p>{props.nasaData.about}</p>
+        <img src={props.nasaData.img}></img>
       </header>
     </MainDiv>
   );

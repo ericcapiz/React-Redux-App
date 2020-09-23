@@ -12,10 +12,14 @@ export const fetchData = () => (dispatch) =>{
     dispatch({type: FETCH_DATA});
 
     axios.get(`https://api.nasa.gov/planetary/apod?date=2017-${randomMonth}-${randomDay}&api_key=kJyIRdMDp5CtmX53QRvUf90MmBwpN781eyhab7Ea`).then((res)=>{
+        console.log("data", res);
         dispatch({
             type: FETCH_SUCCESS,
             payload:
-                {img: res.data.url, name:res.data.title}
+                {
+                    img: res.data.url, 
+                    title:res.data.title,
+                }
             })
         })
        .catch((err)=>{
