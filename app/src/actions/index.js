@@ -17,8 +17,9 @@ export const fetchData = () => (dispatch) =>{
             type: FETCH_SUCCESS,
             payload:
                 {
-                    img: res.data.url, 
+                    media_type:res.data.media_type,
                     title:res.data.title,
+                     url: res.data.url
                 }
             })
         })

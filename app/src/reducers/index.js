@@ -3,7 +3,8 @@ import * as actions from '../actions';
 const initialState = {
     nasaData:{
         title: "",
-        img: ""
+        media_type:"",
+        url:""
     }
 };
 

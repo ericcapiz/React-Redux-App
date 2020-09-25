@@ -56,17 +56,30 @@ const App=(props)=> {
   useEffect(()=>{
     props.fetchData();
   },[])
-  return (
+  if(props.nasaData.media_type === "image"){
+    return (
     <MainDiv>
       <header className="App-header">
-       <h1>Nasa Images</h1>
+       <h1>Nasa</h1>
        <Button onClick={() => window.location.reload(false)}>Click to get a random picture</Button>
         <h3>{props.nasaData.title}</h3>
         <p>{props.nasaData.about}</p>
-        <img src={props.nasaData.img}></img>
+        <img src={props.nasaData.url}></img>
       </header>
     </MainDiv>
-  );
+  )}
+  else{
+    return(
+    <MainDiv>
+    <header className="App-header">
+     <h1>Nasa</h1>
+     <Button onClick={() => window.location.reload(false)}>Click to get a random picture</Button>
+      <h3>{props.nasaData.title}</h3>
+      <p>{props.nasaData.about}</p>
+      <iframe width= "500px" height="500px" frameBorder="0" src={props.nasaData.url}></iframe>
+    </header>
+  </MainDiv>
+    )}
 }
 
 const mapStateToProps =(state)=>{
